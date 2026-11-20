@@ -22,16 +22,32 @@ steps — the #1 cause of failure on this device is bad/mislabeled firmware file
 ### Where to get them (as of Nov 2026 — mirrors rot constantly)
 
 - **KDZ files**: AndroidFileHost is effectively dead (API returns zero mirrors).
-  Working sources found: vnrom.net / addROM Google-Drive mirrors, archive.org's
-  AFHArchive collection (LGUP + drivers), MediaFire reposts (drivers).
+  Working sources found:
+  - **vnrom.net / addROM** — maintain a per-model table of Google-Drive +
+    OneDrive mirrors for H930/US998 KDZs. This is where all three KDZs in the
+    manifest came from.
+  - **Verified-good US99820a mirror** (header-checked, matched the canonical
+    MD5): Google Drive id `1D5uEPOVbxp15LVZVeMcCay4hinzeEiuu` →
+    `https://drive.google.com/uc?id=1D5uEPOVbxp15LVZVeMcCay4hinzeEiuu&export=download&confirm=t`
+  - **archive.org "AFHArchive" collection** — preserved AFH uploads:
+    LGUP_DualMode and drivers live there with direct download.
 - **Google Drive direct download pattern** (no page scraping needed):
   `https://drive.google.com/uc?id=FILE_ID&export=download&confirm=t`
+- **LGUP backup mirror** (Hovatek's patched Dev build — arguably better than
+  DualMode): `https://mega.nz/file/kpYjgSrC#fhAVz5QpEMPU-s-JV9ZjEcjAhaOSQS8Za4WQqATLla0`
+  (Store version: `https://mega.nz/file/st5xESKS#T5wE5-5OuDcfGLtaWJ1kXzMlawDGPcZvsV5I10KsJA`)
+- **LG driver**: official LG CDN is dead — MediaFire mirrors of
+  `LGMobileDriver_WHQL_Ver_4.4.2.exe` exist (e.g. via thecustomdroid.com);
+  verify the MD5 above.
 - **LOS + recovery**: `download.lineageos.org/devices/joan/builds` — always
   verify SHA256 against the LOS API: `download.lineageos.org/api/v2/devices/joan/builds`
 - **MindTheGapps**: `github.com/MindTheGapps/15.0.0-arm64/releases`
 - **Magisk**: `github.com/topjohnwu/Magisk/releases` (v31.1 verified here)
-- **`new_unlock.bin`**: search XDA thread for the WTF unlock — file must be
-  exactly **1024 bytes**.
+- **`new_unlock.bin`**: XDA WTF-unlock thread — file must be exactly **1024 bytes**.
+
+> 🚫 **NEVER flash an H932 (T-Mobile) KDZ** — different carrier customization,
+> known to cause radio/brick issues on open-market joan. Stick to OPEN_EU/OPEN_IL
+> H930 or US998 files.
 
 ## Verify a KDZ *before* you flash it
 
@@ -77,7 +93,7 @@ other than `20a`–`20d`, do **not** flash it.
 1. **Remove every Google account**: Settings → Accounts → each account → Remove.
    (Skip this and FRP will demand the old account after flashing.)
 2. Back up everything — internal storage gets wiped.
-3. Charge to 50 %+.
+3. Charge to **≥60 %**.
 4. Enable Developer options → **USB debugging** → authorize the PC.
    Verify: `adb devices` shows `device` (not `unauthorized`).
 

@@ -24,6 +24,10 @@ LGUP → US99810d Nougat → LGUP → US99820a Oreo → fastboot unlock → LGUP
 When LGUP says *Completed*, the phone will likely **bootloop or sit on a
 dead-Android / error screen. That is expected.** Do not try to boot it.
 
+> ℹ️ From here until step 4 the phone identifies as **US998** (fastboot serial
+> shows `LGUS998…`, model strings change). Fully expected — the H930 Pie flash
+> restores EU identity at the end.
+
 ## Step 2 — Flash US99820a (Oreo — the exploit firmware)
 
 1. Back into Download Mode. From the bootloop: **unplug USB → hold Power ~10 s

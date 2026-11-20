@@ -129,8 +129,33 @@ Then: banking apps → Magisk DenyList → test. Play Store → Settings → Abo
 - **GCam** — `MGC_8.7.250_A11_V15a_MGC.apk` (celsoazevedo.com → dev-BSG → dl134):
   most stable port for H930. Known quirk: occasionally freezes switching modes
   — relaunch it. The stock LOS camera works fine as fallback.
-- **UI speed**: `settings put global {window,transition,animator}_animation_scale 0.5`
+- **UI speed**:
+  ```bash
+  adb shell "for s in window transition animator; do settings put global \${s}_animation_scale 0.5; done"
+  ```
 - **SPIC** — Play Integrity checker — github.com/herzhenr/spic-android
+
+## Tested-version matrix (verified working on H930DS, Nov 2026)
+
+Pin these if a newer release misbehaves:
+
+| Component | Version |
+|---|---|
+| LineageOS | 22.2-20261115-NIGHTLY-joan (Android 15) |
+| Magisk | 31.1 (31100) |
+| LSPosed (JingMatrix) | v1.11.0-7209 zygisk |
+| ViPER4Android RE (module + app) | 2.1.2, non-AIDL |
+| PlayIntegrityFork | v19 |
+| TrickyStore / TrickyAddon | 1.4.1 / v4.4 |
+| Dark Tricks | 3.4 |
+| AdAway / Neo Backup / SPIC | 6.1.4 / 8.3.18 / 1.4.0 |
+| GCam | MGC_8.7.250_A11_V15a |
+| Neo Launcher (optional) | 0.9.3 (pkg `com.saggitt.omega`) |
+
+**ROM alternatives** (same install path): PixelOS 15 and Evolution X 10.3.1
+exist for joan with gapps built-in — but both are discontinued snapshots; LOS
+22.2 is the only actively maintained base. KernelSU-for-joan is a Magisk
+alternative worth noting if root-hiding ever becomes critical.
 
 ## Module inventory after this doc
 

@@ -66,6 +66,9 @@ Unbrick path (H930 Pie KDZ)  ◀───  H930 Pie restored (required LOS base)
 
 The unlock **survives** KDZ reflashing — once unlocked, it stays unlocked.
 
+**In a hurry / doing this a second time?** → [QUICK-REFERENCE.md](QUICK-REFERENCE.md)
+— one-page cheat sheet: buttons, flash order, checksums, key commands, unbrick.
+
 ## 📚 Guide documents
 
 | Step | Doc | Time |

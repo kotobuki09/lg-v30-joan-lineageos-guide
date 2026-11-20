@@ -51,6 +51,8 @@ Rules:
 
 - First boot takes up to ~15 min through the unlock-warning screen — normal.
 - Land on the LOS setup wizard → connect WiFi → add Google account.
+- **Re-enable USB debugging now** (Developer options → USB debugging →
+  authorize the PC) — everything after this needs `adb`.
 
 ## Step 5 — Make recovery permanent
 
